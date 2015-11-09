@@ -1,0 +1,7 @@
+name 'sainsburys'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures sainsburys'
+long_description 'Installs/Configures sainsburys'
+version '0.1.0'

@@ -1,0 +1,48 @@
+{
+  "revision_id": "d73106e64c41a08880424aa5dad2b8f0a1d5cfc7833d6a5fefedc4ab7c66fce8",
+  "name": "sainsburys",
+  "run_list": [
+    "recipe[sainsburys::default]"
+  ],
+  "cookbook_locks": {
+    "sainsburys": {
+      "version": "0.1.0",
+      "identifier": "28dd75421881dc50ad1d5a52243dd11eea7a11c4",
+      "dotted_decimal_identifier": "11502494758240732.22708339717841981.229930713092548",
+      "source": ".",
+      "cache_key": null,
+      "scm_info": {
+        "scm": "git",
+        "remote": null,
+        "revision": null,
+        "working_tree_clean": true,
+        "published": false,
+        "synchronized_remote_branches": [
+
+        ]
+      },
+      "source_options": {
+        "path": "."
+      }
+    }
+  },
+  "default_attributes": {
+
+  },
+  "override_attributes": {
+
+  },
+  "solution_dependencies": {
+    "Policyfile": [
+      [
+        "sainsburys",
+        ">= 0.0.0"
+      ]
+    ],
+    "dependencies": {
+      "sainsburys (0.1.0)": [
+
+      ]
+    }
+  }
+}
