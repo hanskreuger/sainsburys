@@ -6,7 +6,7 @@ template '/etc/nginx/sites-available/sainsburys' do
   source 'nginx.site.erb'
   owner 'root'
   group 'root'
-  mode  00755
+  mode 00755
   notifies :restart, 'service[nginx]', :delayed
 end
 

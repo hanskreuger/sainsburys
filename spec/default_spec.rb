@@ -27,6 +27,6 @@ end
 
 describe 'round_robin responses should be balanced' do
   subject { round_robin }
-  it { is_expected.to satisfy("respond 5 times with " + APP1_STRING) { |r| r.count(APP1_STRING) == 5 } }
-  it { is_expected.to satisfy("respond 5 times with " + APP2_STRING) { |r| r.count(APP2_STRING) == 5 } }
+  it { is_expected.to satisfy('respond 5 times with ' + APP1_STRING) { |r| r.count(APP1_STRING) == 5 } }
+  it { is_expected.to satisfy('respond 5 times with ' + APP2_STRING) { |r| r.count(APP2_STRING) == 5 } }
 end
