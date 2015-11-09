@@ -23,10 +23,12 @@ describe server(:web) do
       expect(response.body).to include('Hi there, I\'m served from')
     end
   end
-end
-
-describe 'round_robin responses should be balanced' do
-  subject { round_robin }
-  it { is_expected.to satisfy('respond 5 times with ' + APP1_STRING) { |r| r.count(APP1_STRING) == 5 } }
-  it { is_expected.to satisfy('respond 5 times with ' + APP2_STRING) { |r| r.count(APP2_STRING) == 5 } }
+  describe 'round_robin responses should be balanced' do
+    it "responds 5 times with #{APP1_STRING}" do
+      expect(round_robin).to satisfy { |r| r.count(APP1_STRING) == 5 }
+    end
+    it "responds 5 times with #{APP2_STRING}" do
+      expect(round_robin).to satisfy { |r| r.count(APP2_STRING) == 5 }
+    end
+  end
 end
