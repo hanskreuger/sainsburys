@@ -1,3 +1,7 @@
+upstream app_group {
+    server 192.168.33.53:8484;
+    server 192.168.33.73:8484;
+}
 server {
   listen   <%= node['nginx']['port'] -%>;
   server_name  <%= node['hostname'] %>;
@@ -8,6 +12,6 @@ server {
       proxy_set_header X-Real-IP $remote_addr;
       proxy_set_header X-Forwarded-For $remote_addr;
       proxy_set_header Host $host;
-      proxy_pass http://192.168.33.53:8484;
+      proxy_pass http://app_group;
   }
 }
