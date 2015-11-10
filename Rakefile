@@ -6,7 +6,7 @@ require 'rspec/core/rake_task'
 desc 'Run style & lint checks'
 task style: [:rubocop, :foodcritic]
 
-task default: [:style, :build, :integration]
+task default: [:style, :build, :verify, :integration]
 
 # Rubocop
 desc 'Run Rubocop lint checks'
@@ -38,6 +38,23 @@ namespace :build do
   task :all do
     sh 'kitchen converge app'
     sh 'kitchen converge web'
+  end
+end
+
+desc 'verify everything'
+task verify: 'verify:all'
+
+namespace :verify do
+  desc 'verify app nodes'
+  task :app do
+    sh 'kitchen verify app'
+  end
+  desc 'verify web node'
+  task :web do
+    sh 'kitchen verify web'
+  end
+  task :all do
+    sh 'kitchen verify'
   end
 end
 
