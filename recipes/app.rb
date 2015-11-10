@@ -1,13 +1,13 @@
 include_recipe 'golang'
 
-directory '/root/go/src/sainsburys' do
+directory node['sainsburys']['src_dir'] do
   recursive true
   owner node['go']['owner']
   group node['go']['group']
   mode node['go']['mode']
 end
 
-cookbook_file '/root/go/src/sainsburys/sainsburys.go' do
+cookbook_file node['sainsburys']['src_file'] do
   source 'sainsburys.go'
   owner node['go']['owner']
   group node['go']['group']
@@ -16,7 +16,8 @@ cookbook_file '/root/go/src/sainsburys/sainsburys.go' do
 end
 
 bash 'go install sainsburys' do
-  code "#{node['go']['install_dir']}/go/bin/go install /root/go/src/sainsburys/sainsburys.go"
+  code "#{node['go']['install_dir']}/go/bin/go install \
+   #{node['sainsburys']['src_file']}"
   user node['go']['owner']
   group node['go']['group']
   environment('GOPATH' => node['go']['gopath'],
