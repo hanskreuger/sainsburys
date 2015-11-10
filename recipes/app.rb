@@ -36,5 +36,5 @@ cookbook_file '/etc/init.d/sainsburys' do
 end
 
 service 'sainsburys' do
-  action :start
+  action [:enable, :start]
 end

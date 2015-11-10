@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# sainsburys
+#
+# chkconfig:   - 57 47
+# description: sainsburys
+# processname:  sainsburys
+#
+
 case $1 in
     start)
         echo "Starting sainsburys web app."
