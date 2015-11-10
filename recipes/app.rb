@@ -1,5 +1,7 @@
 include_recipe 'golang'
 
+package 'lsof'
+
 directory '/root/go/src/sainsburys' do
   recursive true
   owner node['go']['owner']
