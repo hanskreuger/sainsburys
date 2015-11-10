@@ -29,17 +29,15 @@ task build: 'build:all'
 namespace :build do
   desc 'converge app nodes'
   task :app do
-    sh 'kitchen converge pensive-landscape-4090'
-    sh 'kitchen converge thrashing-volcano-2002'
+    sh 'kitchen converge app'
   end
   desc 'converge web node'
   task :web do
-    sh 'kitchen converge silent-moonlight-1203'
+    sh 'kitchen converge web'
   end
   task :all do
-    sh 'kitchen converge pensive-landscape-4090'
-    sh 'kitchen converge thrashing-volcano-2002'
-    sh 'kitchen converge silent-moonlight-1203'
+    sh 'kitchen converge app'
+    sh 'kitchen converge web'
   end
 end
 
@@ -57,12 +55,11 @@ task destroy: 'destroy:all'
 namespace :destroy do
   desc 'destroy app nodes'
   task :app do
-    sh 'kitchen destroy pensive-landscape-4090'
-    sh 'kitchen destroy thrashing-volcano-2002'
+    sh 'kitchen destroy app'
   end
   desc 'destroy web node'
   task :web do
-    sh 'kitchen destroy silent-moonlight-1203'
+    sh 'kitchen destroy web'
   end
   task :all do
     sh 'kitchen destroy'

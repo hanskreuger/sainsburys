@@ -44,5 +44,10 @@ platforms:
         - ['private_network', {ip: '192.168.33.73'}]
 
 suites:
-  - name: default
-    attributes:
+  - name: web
+    includes:
+      - silent-moonlight-1203
+  - name: app
+    includes:
+      - thrashing-volcano-2002
+      - pensive-landscape-4090
