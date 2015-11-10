@@ -1,5 +1,5 @@
 # sainsburys
-2 tier go app demo using test-kitchen, chef, rspec, & friends
+2 tier demo go app using test-kitchen, chef, rspec, & friends
 
 ## Prerequisites
 - chefdk 0.9.0
@@ -27,7 +27,9 @@ $ rake build # kitchen converge all nodes, will update application code
 $ rake verify # kitchen verify all nodes
 $ rake destroy # clean up all nodes
 ```
-Application code can be found in ```files/default/sainsburys.go``` updates to this file will trigger rebuilds/redeploys during app node convergence (eg. rake build).
+Application code can be found in ```files/default/sainsburys.go```.
+rake build (or any other converge) will rebuild the executable whenever this file is updated.
+
 ## Notes
 Developed & tested on OSX - may not function as expected on other OS workstations. That said, there's a good chance everything apart from the integration test will work fine cross platform.
 
