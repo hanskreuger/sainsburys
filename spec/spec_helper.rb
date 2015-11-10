@@ -1,8 +1,8 @@
 require 'infrataster/rspec'
 require 'net/http'
 
-APP1_STRING = 'Hi there, I\'m served from default-thrashing-volcano-2002!'
-APP2_STRING = 'Hi there, I\'m served from default-pensive-landscape-4090!'
+APP1_STRING = 'Hi there, I\'m served from app-thrashing-volcano-2002!'
+APP2_STRING = 'Hi there, I\'m served from app-pensive-landscape-4090!'
 
 Infrataster::Server.define(:web) do |server|
   server.address = '192.168.33.33'
